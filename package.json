@@ -1,0 +1,27 @@
+{
+  "name": "jioubot",
+  "version": "1.0.0",
+  "description": "Junyan's Bot",
+  "main": "JiouBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Junyan721113",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.2.4",
+    "chart.js": "^4.2.1",
+    "mathjax": "^3.2.2",
+    "oicq": "^2.3.1",
+    "openai": "^3.2.1",
+    "puppeteer": "^19.7.4",
+    "rehype": "^12.0.1",
+    "rehype-mathjax": "^4.0.2",
+    "rehype-parse": "^8.0.4",
+    "rehype-stringify": "^9.0.3",
+    "remark-math": "^5.1.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.2"
+  }
+}

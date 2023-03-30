@@ -1,0 +1,29 @@
+请求接口：
+URL:-POST https://api.openai.com/v1/completions
+headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' +官网获取的api秘钥 }
+data：{prompt: 问题内容, max_tokens: 2048, model: "text-davinci-003"}
+
+例子：
+headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' +sk-s5S1BoVMLTUYVtEVLHBQP3BlbkFQrVKZwG9pLuSHBD3btLsD }
+data：{prompt: '300字给我写一个小作文', max_tokens: 2048, model: "text-davinci-003"}
+
+返回格式：
+{
+    "id": "cmpl-6PSwUZAcvr2jLqjzt43qL9oRBhNuE",
+    "object": "text_completion",
+    "created": 1671527474,
+    "model": "text-davinci-003",
+    "choices": [
+        {
+            "text": "\n\n大家好，我是一名坚定不移的中学生，准备踏上梦想建设之旅。\n\n我不仅要努力学习,还要培养自己,通过广泛的学习,让自己的思想更加开放,实现从幼年至大人的知识储备的扩充。\n\n我也不想被这个社会小小的活活包围, 要拥有自己的眼界和思想视角, 而不是被别人思维方式和行为方式控制。\n\n我也要拥有一颗善良而畅游的心, 不断去学习, 将知识装进自己的空间, 使自己不受时代限制,而可以得到更大的学习机会。\n\n在今后的日子里,我准备对自己的梦想发起挑战,让周围的人见证我实现自我的努力结果,为自己实现伟大的事业。\n\n未来的日子里,我将不断的学习,以最坚定的信念追逐梦想,从此一发不可收拾,做在自己的大道上最闪亮的星星!",
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop"
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 15,
+        "completion_tokens": 570,
+        "total_tokens": 585
+    }
+}

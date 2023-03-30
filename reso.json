@@ -1,0 +1,65 @@
+{
+	"plant": [
+		{
+			"name": "草",
+			"Basic_Sell": 1,
+			"Seed_Cost": 1,
+			"Grow_Time": 5,
+			"Basic_Yield": 1
+		},
+		{
+			"name": "小麦",
+			"Basic_Sell": 10,
+			"Seed_Cost": 30,
+			"Grow_Time": 120,
+			"Basic_Yield": 3
+		},
+		{
+			"name": "土豆",
+			"Basic_Sell": 3,
+			"Seed_Cost": 15,
+			"Grow_Time": 90,
+			"Basic_Yield": 5
+		},
+		{
+			"name": "花生",
+			"Basic_Sell": 3,
+			"Seed_Cost": 30,
+			"Grow_Time": 100,
+			"Basic_Yield": 10
+		},
+		{
+			"name": "大头菜",
+			"Basic_Sell": 300,
+			"Seed_Cost": 300,
+			"Grow_Time": 180,
+			"Basic_Yield": 1
+		},
+		{
+			"name": "油菜",
+			"Basic_Sell": 5,
+			"Seed_Cost": 40,
+			"Grow_Time": 110,
+			"Basic_Yield": 8
+		},
+		{
+			"name": "番茄",
+			"Basic_Sell": 50,
+			"Seed_Cost": 200,
+			"Grow_Time": 200,
+			"Basic_Yield": 4
+		}
+	],
+	"shop": [
+		{
+			"name": "奇怪的奖杯",
+			"description": "是谁把这么贵的东西放在商店里的！",
+			"Basic_Cost": 1000000
+		},
+		{
+			"name": "五块耕地",
+			"description": "可以用来种东西",
+			"Basic_Cost": 1000
+		}
+	]
+}

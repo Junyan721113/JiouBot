@@ -1,6 +1,6 @@
 "use strict";
 import { createClient, core } from "oicq";
-import fs from "fs";
+import fs, { readFileSync, readSync } from "fs";
 import https from "https";
 import asyncTask from "async";
 import childp from "child_process";
@@ -512,7 +512,14 @@ let renderHTML = async (keyName, visitor) => {
 
 client.on("message", async (e) => {
 	//console.log(e);
+	let gConfig = JSON.parse(fs.readFileSync("groupConfig.json"));
+
+	//一般消息
 	if (e.atme === false && e.raw_message.search(/jiou/) === -1) {
+		//GPA触发器
+		if (gConfig[e.group_id] !== undefined) {
+			if (gConfig[e.group_id].gpaTrigger === "on" && e.raw_message.toLowerCase().search(/gpa/) !== -1) e.reply("你GPA你妈呢！卷魔怔了？", true);
+		}
 		let messageFiltered = e
 			.toString()
 			.replace(/\n|(\{.*\})/g, " ")
@@ -537,6 +544,20 @@ client.on("message", async (e) => {
 		userTiming.set(e.sender.user_id, userTiming.get(e.sender.user_id) + 1);
 		console.log("账号 " + e.sender.user_id + " 恢复一次频繁次数");
 	}, 300000);
+
+	//设置配置
+	if (e.raw_message.search(/config/) !== -1) {
+		let keyw = e.raw_message.substring(e.raw_message.search(/config/));
+		keyw = keyw.replace(/config/g, "");
+		let keywSplit = keyw.split(" ");
+		if (e.group_id !== undefined) {
+			if(gConfig[e.group_id] === undefined) gConfig[e.group_id] = {};
+			gConfig[e.group_id][keywSplit[1]] = keywSplit[2];
+		}
+		fs.writeFileSync("groupConfig.json", JSON.stringify(gConfig));
+		e.reply(`将设置 ${keywSplit[1]} 修改为 ${keywSplit[2]} 成功`, false);
+		return;
+	}
 
 	//TeX渲染
 	if (e.raw_message.search(/jioutex/) !== -1) {

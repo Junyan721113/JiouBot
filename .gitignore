@@ -3,6 +3,8 @@ data
 GPT2-Chinese
 GPT2-chitchat
 User.txt
+data.json
+groupConfig.json
 
 # Logs
 logs
